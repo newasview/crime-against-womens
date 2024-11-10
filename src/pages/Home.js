@@ -9,10 +9,11 @@ import {
     Legend 
   } from 'recharts';
 import Table from "../components/SortableTable";
-import { fetchCrimes } from '../services/apiService';
+import { fetchCrimes, fetchAggregatedCrimeData } from '../services/apiService';
 
 function Home() {
   const [crimeData, setCrimeData] = useState([]);
+  const [aggregatedCrimeData, setAggregatedCrimeData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [state, setState] = useState("");
 
@@ -69,6 +70,14 @@ const loadCrimeData = async (data) => {
       .catch(error => console.error("Error fetching data:", error));
   }, []);
 
+  // Fetch aggregated crime data from the backend
+  useEffect(() => {
+    fetchAggregatedCrimeData()
+    .then(response => {
+        setAggregatedCrimeData(response.data);
+      })
+    .catch(error => console.error("Error fetching aggregated crime data", error));
+  }, []);
 
   // Filter crime data by state
   const filterByState = () => {
@@ -105,8 +114,26 @@ const loadCrimeData = async (data) => {
         <button onClick={filterByState}>Filter</button>
       </div>
 
+      <h2>Crime Rates by State</h2>
+
+      <div className="chart-container">
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart data={aggregatedCrimeData}>
+            <XAxis dataKey="state" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar 
+              dataKey="crime_rate" 
+              fill="#82ca9d" 
+              name="Crime Rates" 
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
       {/* Crime Chart */}
-      <h2>Crime Statistics</h2>
+      <h2>Crime Statistics by State</h2>
       {/* Bar Chart */}
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={400}>

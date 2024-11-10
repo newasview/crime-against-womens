@@ -1,1 +1,5 @@
+CREATE DATABASE crime_dashboard;
+
+USE crime_dashboard;
+
 CREATE TABLE crimeswomen (id INT AUTO_INCREMENT PRIMARY KEY,  state VARCHAR(100),  year INT,  rape INT,  ka INT,  dd INT,  aow INT, aom INT, dv INT, wt INT);
