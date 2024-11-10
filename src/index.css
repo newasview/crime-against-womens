@@ -1,0 +1,113 @@
+body {
+  padding: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.app-container {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container button {
+  padding: 8px;
+}
+
+.search-input {
+  width: 250px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.yearly-trend {
+  float: left;
+  width: 50%;
+}
+
+.yearly-trend h2 {
+  margin: 0;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.yearly-trend div {
+  padding: 10px;
+}
+
+.yearly-trend span {
+  color: #222;
+  padding-bottom: 10px;
+}
+
+.state-crime-heading {
+  font-size: 20px;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-responsive {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.crime-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th-head {
+  font-weight: normal!important;
+  color: #555;
+}
+
+.crime-table th, 
+.crime-table td {
+  border: 1px solid #ddd !important;
+  padding: 12px;
+  text-align: left !important;
+}
+
+.crime-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  position: relative;
+}
+
+.crime-table th span {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+}
+
+.crime-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.crime-visualization {
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+  overflow-x: auto;
+}
